@@ -1,0 +1,10 @@
+postgresql_version: 11
+postgresql_version_terse: "{{postgresql_version | replace('.', '')}}"
+postgresql_yum_repository_url: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+postgresql_service_name: postgresql-{{postgresql_version}}
+postgresql_data_dir: /var/lib/pgsql/{{postgresql_version}}/data
+postgresql_admin_user: postgres
+postgresql_databases: []
+postgresql_users: []
+postgresql_encoding: UTF-8
+postgresql_locale: en_US.UTF-8

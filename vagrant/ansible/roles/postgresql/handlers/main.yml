@@ -1,0 +1,2 @@
+- name: Restart PostgreSQL service
+  service: name={{postgresql_service_name}} state=restarted

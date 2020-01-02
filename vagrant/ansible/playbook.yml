@@ -1,0 +1,5 @@
+- hosts: all
+  vars_files:
+    - ./vars.yml
+  roles:
+    - postgresql
