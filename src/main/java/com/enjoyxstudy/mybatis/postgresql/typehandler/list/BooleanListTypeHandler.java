@@ -6,6 +6,6 @@ package com.enjoyxstudy.mybatis.postgresql.typehandler.list;
 public class BooleanListTypeHandler extends ListTypeHandler<Boolean> {
 
     public BooleanListTypeHandler() {
-        super("bool");
+        super("boolean");
     }
 }
