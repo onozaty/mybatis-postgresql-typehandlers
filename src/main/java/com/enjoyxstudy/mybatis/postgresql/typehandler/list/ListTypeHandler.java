@@ -44,7 +44,7 @@ public abstract class ListTypeHandler<T> extends BaseTypeHandler<List<T>> {
     @Override
     public List<T> getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
 
-        throw new UnsupportedOperationException();
+        return toList(cs.getArray(columnIndex));
     }
 
     @SuppressWarnings("unchecked")

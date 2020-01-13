@@ -3,31 +3,26 @@ package com.enjoyxstudy.mybatis.postgresql.typehandler.list;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Arrays;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
+
+import com.enjoyxstudy.mybatis.postgresql.typehandler.TestUtils;
 
 public class ListTypeHandlerTest {
 
     @Test
     public void test() throws IOException {
 
-        String resource = "com/enjoyxstudy/mybatis/postgresql/typehandler/list/list-test.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
-        try (SqlSession session = sqlSessionFactory.openSession()) {
+        try (SqlSession session = TestUtils.createSession(this.getClass(), "list-test.xml")) {
 
             ListMapper mapper = session.getMapper(ListMapper.class);
 
             mapper.createTable();
 
             ListRecord record = ListRecord.builder()
+                    .id(1)
                     .booleans(Arrays.asList(true, false, true))
                     .shorts(Arrays.asList((short) 0, (short) 1))
                     .integers(Arrays.asList(1, 2, 3))
@@ -45,7 +40,29 @@ public class ListTypeHandlerTest {
 
             mapper.dropTable();
         }
+    }
 
+    @Test
+    public void testNull() throws IOException {
+
+        try (SqlSession session = TestUtils.createSession(this.getClass(), "list-test.xml")) {
+
+            ListMapper mapper = session.getMapper(ListMapper.class);
+
+            mapper.createTable();
+
+            ListRecord record = ListRecord.builder()
+                    .id(2)
+                    .build();
+
+            mapper.insert(record);
+
+            ListRecord result = mapper.select();
+
+            assertThat(result).isEqualTo(record);
+
+            mapper.dropTable();
+        }
     }
 
 }

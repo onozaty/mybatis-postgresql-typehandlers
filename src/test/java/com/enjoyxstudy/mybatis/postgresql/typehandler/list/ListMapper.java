@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Update;
 public interface ListMapper {
 
     @Update("CREATE TEMP TABLE list_records ("
+            + "id integer, "
             + "booleans boolean[], "
             + "shorts smallint[], "
             + "integers integer[], "
@@ -21,8 +22,9 @@ public interface ListMapper {
             + "strings text[])")
     void createTable();
 
-    @Insert("INSERT INTO list_records (booleans, shorts, integers, longs, floats, doubles, strings)"
+    @Insert("INSERT INTO list_records (id, booleans, shorts, integers, longs, floats, doubles, strings)"
             + " VALUES ("
+            + "#{id}, "
             + "#{booleans, typeHandler=booleanListTypeHandler}, "
             + "#{shorts, typeHandler=shortListTypeHandler}, "
             + "#{integers, typeHandler=integerListTypeHandler}, "

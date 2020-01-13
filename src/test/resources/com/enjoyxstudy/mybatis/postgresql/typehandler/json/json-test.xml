@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeHandlers>
-    <typeHandler handler="com.enjoyxstudy.mybatis.postgresql.typehandler.json.JsonTypeHandler" javaType="com.enjoyxstudy.mybatis.postgresql.typehandler.json.Other" />
+    <typeHandler handler="com.enjoyxstudy.mybatis.postgresql.typehandler.json.JsonTypeHandler" javaType="com.enjoyxstudy.mybatis.postgresql.typehandler.json.JsonData" />
   </typeHandlers>
   <environments default="test">
     <environment id="test">

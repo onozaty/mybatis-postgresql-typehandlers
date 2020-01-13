@@ -9,15 +9,15 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface JsonMapper {
 
-    @Update("CREATE TEMP TABLE users (id integer, name text, other JSONB)")
+    @Update("CREATE TEMP TABLE json_records (id integer, json JSONB)")
     void createTable();
 
-    @Insert("INSERT INTO users (id, name, other) VALUES (#{id}, #{name}, #{other})")
-    void insert(User user);
+    @Insert("INSERT INTO json_records (id, json) VALUES (#{id}, #{json})")
+    void insert(JsonRecord user);
 
-    @Select("SELECT * FROM users")
-    User select();
+    @Select("SELECT * FROM json_records")
+    JsonRecord select();
 
-    @Update("DROP TABLE users")
+    @Update("DROP TABLE json_records")
     void dropTable();
 }

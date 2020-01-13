@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ListRecord {
 
+    private int id;
+
     private List<Boolean> booleans;
 
     private List<Short> shorts;
