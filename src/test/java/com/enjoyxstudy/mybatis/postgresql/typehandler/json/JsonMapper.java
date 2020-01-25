@@ -13,7 +13,7 @@ public interface JsonMapper {
     void createTable();
 
     @Insert("INSERT INTO json_records (id, json) VALUES (#{id}, #{json})")
-    void insert(JsonRecord user);
+    void insert(JsonRecord record);
 
     @Select("SELECT * FROM json_records")
     JsonRecord select();

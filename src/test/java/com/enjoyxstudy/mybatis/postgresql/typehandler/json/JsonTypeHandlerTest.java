@@ -23,12 +23,12 @@ public class JsonTypeHandlerTest {
 
             mapper.createTable();
 
-            JsonRecord jsonRecord = new JsonRecord(2, new JsonData(20, "hoge"));
-            mapper.insert(jsonRecord);
+            JsonRecord record = new JsonRecord(2, new JsonData(20, "hoge"));
+            mapper.insert(record);
 
             JsonRecord result = mapper.select();
 
-            assertThat(result).isEqualTo(jsonRecord);
+            assertThat(result).isEqualTo(record);
 
             mapper.dropTable();
         }
