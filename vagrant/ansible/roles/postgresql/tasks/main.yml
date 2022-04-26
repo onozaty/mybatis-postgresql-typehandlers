@@ -1,4 +1,4 @@
 - include: install.yml
-- include: create_database.yml
 - include: create_user.yml
+- include: create_database.yml
 - include: configure.yml
