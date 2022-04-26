@@ -2,19 +2,32 @@ plugins {
     id 'java-library'
 }
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+def defaultEncoding = 'UTF-8'
+tasks.withType(AbstractCompile)*.options*.encoding = defaultEncoding
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 dependencies {
     testImplementation 'junit:junit:4.12'
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.14.0'
+    testImplementation 'org.assertj:assertj-core:3.14.0'
 
-    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.3'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.1'
-    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.9'
-    
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
-    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
+    implementation 'org.mybatis:mybatis:3.5.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
+    implementation 'org.postgresql:postgresql:42.2.9'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
