@@ -5,17 +5,17 @@
 MyBatis PostgreSQL TypeHandlers は、PostgreSQL向けのTypeHandlerを追加するライブラリです。  
 下記のTypeHandlerを提供します。
 
-|TypeHandler           |Javaでの型     |PostgreSQLでの型    |
-|----------------------|---------------|--------------------|
-|PgEnumTypeHandler     |`enum`         |`enum`              |
-|JsonTypeHandler       |`Object`       |`jsonb`             |
-|StringListTypeHandler |`List<String>` |`text[]`            |
-|BooleanListTypeHandler|`List<Boolean>`|`boolean[]`         |
-|ShortListTypeHandler  |`List<Short>`  |`smallint[]`        |
-|IntegerListTypeHandler|`List<Integer>`|`integer[]`         |
-|LongListTypeHandler   |`List<Long>`   |`bigint[]`          |
-|FloatListTypeHandler  |`List<Float>`  |`real[]`            |
-|DoubleListTypeHandler |`List<Double>` |`double precision[]`|
+|TypeHandler                                                     |Javaでの型     |PostgreSQLでのカラム型|
+|----------------------------------------------------------------|---------------|----------------------|
+|`com.github.onozaty.mybatis.pg.type.pgenum.PgEnumTypeHandler`   |`enum`         |`enum`                |
+|`com.github.onozaty.mybatis.pg.type.json.JsonTypeHandler`       |`Object`       |`jsonb`               |
+|`com.github.onozaty.mybatis.pg.type.list.StringListTypeHandler` |`List<String>` |`text[]`              |
+|`com.github.onozaty.mybatis.pg.type.list.BooleanListTypeHandler`|`List<Boolean>`|`boolean[]`           |
+|`com.github.onozaty.mybatis.pg.type.list.ShortListTypeHandler`  |`List<Short>`  |`smallint[]`          |
+|`com.github.onozaty.mybatis.pg.type.list.IntegerListTypeHandler`|`List<Integer>`|`integer[]`           |
+|`com.github.onozaty.mybatis.pg.type.list.LongListTypeHandler`   |`List<Long>`   |`bigint[]`            |
+|`com.github.onozaty.mybatis.pg.type.list.FloatListTypeHandler`  |`List<Float>`  |`real[]`              |
+|`com.github.onozaty.mybatis.pg.type.list.DoubleListTypeHandler` |`List<Double>` |`double precision[]`  |
 
 ## セットアップ
 

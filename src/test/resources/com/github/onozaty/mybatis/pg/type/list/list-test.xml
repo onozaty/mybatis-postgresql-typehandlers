@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <typeAliases>
+    <typeAlias alias="booleanListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.BooleanListTypeHandler" />
+    <typeAlias alias="shortListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.ShortListTypeHandler" />
+    <typeAlias alias="integerListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.IntegerListTypeHandler" />
+    <typeAlias alias="longListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.LongListTypeHandler" />
+    <typeAlias alias="floatListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.FloatListTypeHandler" />
+    <typeAlias alias="doubleListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.DoubleListTypeHandler" />
+    <typeAlias alias="stringListTypeHandler" type="com.github.onozaty.mybatis.pg.type.list.StringListTypeHandler" />
+  </typeAliases>
+  <typeHandlers>
+  </typeHandlers>
+  <environments default="test">
+    <environment id="test">
+      <transactionManager type="JDBC" />
+      <dataSource type="UNPOOLED">
+        <property name="driver" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://192.168.33.10/testdb" />
+        <property name="username" value="user1" />
+        <property name="password" value="pass1" />
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper class="com.github.onozaty.mybatis.pg.type.list.ListMapper"/>
+  </mappers>
+</configuration>
