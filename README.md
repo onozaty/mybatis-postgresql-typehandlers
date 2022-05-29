@@ -28,14 +28,14 @@ It is available simply by adding it to a dependency.
 <dependency>
     <groupId>com.github.onozaty</groupId>
     <artifactId>mybatis-postgresql-typehandlers</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'com.github.onozaty:mybatis-postgresql-typehandlers:1.0.0'
+implementation 'com.github.onozaty:mybatis-postgresql-typehandlers:1.0.1'
 ```
 
 ## License

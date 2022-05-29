@@ -28,14 +28,14 @@ MyBatis PostgreSQL TypeHandlers は Maven Central で公開しています。
 <dependency>
     <groupId>com.github.onozaty</groupId>
     <artifactId>mybatis-postgresql-typehandlers</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'com.github.onozaty:mybatis-postgresql-typehandlers:1.0.0'
+implementation 'com.github.onozaty:mybatis-postgresql-typehandlers:1.0.1'
 ```
 
 ## ライセンス
