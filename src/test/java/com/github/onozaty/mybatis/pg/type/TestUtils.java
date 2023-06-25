@@ -2,6 +2,7 @@ package com.github.onozaty.mybatis.pg.type;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Properties;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,7 +17,15 @@ public class TestUtils {
 
         try (InputStream inputStream = clazz.getResourceAsStream(name)) {
 
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+            String dbhost = System.getProperty("dbhost");
+            if (dbhost == null || dbhost == "") {
+                dbhost = "localhost";
+            }
+
+            Properties properties = new Properties();
+            properties.setProperty("dbhost", dbhost);
+
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, properties);
             return sqlSessionFactory.openSession();
         }
     }

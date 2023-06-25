@@ -1,5 +1,6 @@
 # MyBatis PostgreSQL TypeHandlers
 
+[![Test](https://github.com/onozaty/mybatis-postgresql-typehandlers/actions/workflows/test.yaml/badge.svg)](https://github.com/onozaty/mybatis-postgresql-typehandlers/actions/workflows/test.yaml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.onozaty/mybatis-postgresql-typehandlers/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.onozaty/mybatis-postgresql-typehandlers)
 
 MyBatis PostgreSQL TypeHandlers is a library for adding TypeHandlers for PostgreSQL.  

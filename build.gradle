@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
-    id 'com.palantir.git-version' version '0.15.0'
+    id 'com.palantir.git-version' version '2.0.0'
 }
 
 def gitInfo = versionDetails()
@@ -16,6 +16,9 @@ targetCompatibility = JavaVersion.VERSION_1_8
 def defaultEncoding = 'UTF-8'
 tasks.withType(AbstractCompile)*.options*.encoding = defaultEncoding
 
+tasks.withType(Test) {
+    systemProperty('dbhost', System.getProperty('dbhost'))
+}
 
 configurations {
     compileOnly {
