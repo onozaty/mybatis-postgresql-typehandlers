@@ -29,7 +29,8 @@ dependencies {
 
     implementation 'org.mybatis:mybatis:3.5.9'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
-    implementation 'org.postgresql:postgresql:42.3.4'
+
+    testRuntimeOnly 'org.postgresql:postgresql:42.3.4'
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
