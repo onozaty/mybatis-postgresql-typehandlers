@@ -23,13 +23,13 @@ public class ListTypeHandlerTest {
 
             ListRecord record = ListRecord.builder()
                     .id(1)
-                    .booleans(Arrays.asList(true, false, true))
-                    .shorts(Arrays.asList((short) 0, (short) 1))
-                    .integers(Arrays.asList(1, 2, 3))
-                    .longs(Arrays.asList(1L, 2L))
-                    .floats(Arrays.asList(0.1f, 0.2f, 0.3f))
-                    .doubles(Arrays.asList(0.2, 0.3))
-                    .strings(Arrays.asList("あ", "A"))
+                    .booleans(Arrays.asList(Boolean.FALSE, Boolean.TRUE, null))
+                    .shorts(Arrays.asList(null, Short.MIN_VALUE, Short.MAX_VALUE))
+                    .integers(Arrays.asList(Integer.MIN_VALUE, Integer.MAX_VALUE, null))
+                    .longs(Arrays.asList(null, Long.MIN_VALUE, Long.MAX_VALUE))
+                    .floats(Arrays.asList(Float.MIN_VALUE, Float.MAX_VALUE, null))
+                    .doubles(Arrays.asList(Double.MIN_VALUE, Double.MAX_VALUE, null))
+                    .strings(Arrays.asList("あ", "A", "", null))
                     .build();
 
             mapper.insert(record);
