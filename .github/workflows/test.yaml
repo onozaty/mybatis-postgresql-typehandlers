@@ -1,0 +1,44 @@
+name: Test
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: user1
+          POSTGRES_PASSWORD: pass1
+          POSTGRES_DB: testdb
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Install Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '8'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Execute Gradle build
+        run: ./gradlew build -PsonatypeUsername="" -PsonatypePassword=""
