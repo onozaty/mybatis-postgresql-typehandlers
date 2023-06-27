@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-  <typeHandlers>
-    <typeHandler handler="com.github.onozaty.mybatis.pg.type.pgenum.PgEnumTypeHandler" javaType="com.github.onozaty.mybatis.pg.type.pgenum.Day" />
-  </typeHandlers>
+  <settings>
+    <setting name="defaultEnumTypeHandler" value="com.github.onozaty.mybatis.pg.type.pgenum.PgEnumTypeHandler"/>
+  </settings>
   <environments default="test">
     <environment id="test">
       <transactionManager type="JDBC" />
